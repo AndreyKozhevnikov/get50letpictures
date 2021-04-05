@@ -36,7 +36,7 @@ function formatDate(date) {
   let day = '' + d.getDate();
   let year = d.getFullYear();
   let hour = d.getHours();
-  let mins = d.getUTCMilliseconds();
+  let mins = d.getMinutes();
   if (month.length < 2) month = '0' + month;
   if (day.length < 2) day = '0' + day;
   return [year, month, day,hour,mins].join('-');

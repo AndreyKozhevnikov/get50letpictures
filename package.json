@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/AndreyKozhevnikov/get50letpictures#readme",
   "dependencies": {
+    "denque": "^1.5.0",
+    "mongoose": "^5.12.3",
     "request": "^2.88.2"
   }
 }

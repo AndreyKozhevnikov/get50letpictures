@@ -39,5 +39,6 @@ function formatDate(date) {
   let mins = d.getMinutes();
   if (month.length < 2) month = '0' + month;
   if (day.length < 2) day = '0' + day;
+  if (mins.length < 2) mins = '0' + mins;
   return [year, month, day,hour,mins].join('-');
 }

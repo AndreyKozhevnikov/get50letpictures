@@ -35,10 +35,11 @@ function formatDate(date) {
   let month = '' + (d.getMonth() + 1);
   let day = '' + d.getDate();
   let year = d.getFullYear();
-  let hour = d.getHours();
+  let hour =''+ d.getHours();
   let mins ='' + d.getMinutes();
   if (month.length < 2) month = '0' + month;
   if (day.length < 2) day = '0' + day;
+  if (hour.length < 2) hour = '0' + hour;
   if (mins.length < 2) mins = '0' + mins;
   return [year, month, day,hour,mins].join('-');
 }

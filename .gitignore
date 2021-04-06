@@ -17,6 +17,7 @@ build/
 .cr/
 .vs/
 node_modules/
+images/
 
 createGit.bat
 

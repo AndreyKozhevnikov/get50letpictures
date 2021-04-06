@@ -23,7 +23,8 @@ let mongoose = require('mongoose');
 //let mongoDB ='mongodb://localhost:27017/getImageTest';
 //let mongoDB ='mongodb+srv://testName:<testPass>@cluster0.mergb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 //let mongoDB ='mongodb+srv://testName:<testPass>@cluster0.mergb.mongodb.net/test';
-let mongoDB ='mongodb+srv://testName:testPass@cluster0.mergb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+//let mongoDB ='mongodb+srv://testName:testPass@cluster0.mergb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+let mongoDB=process.env.MONGODB_URI;
 mongoose.connect(mongoDB, { useNewUrlParser: true,useUnifiedTopology: true  },(err)=>{
   console.log(err);
 });

@@ -22,11 +22,6 @@ async function getImages(){
   }
 if (item_list!=null){
   console.log('startforeach');
-  fs.writeFile('helloworld.txt', 'Hello World!', function (err) {
-    if (err) return console.log(err);
-    console.log('Hello World > helloworld.txt');
-  });
-  
   item_list.forEach(x=>{
     fs.writeFile('./Images/'+x.Name+'.jpg',x.Data,(err)=>{
      if (err){
@@ -43,7 +38,6 @@ if (item_list!=null){
     });
   }
   console.log('done!');
-  process.exit(1);
 }
 getImages();
 

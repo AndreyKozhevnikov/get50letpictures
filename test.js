@@ -1,7 +1,7 @@
 let ImageItem = require('./models/ImageItem.js');
 var request = require('request');
 
-var download = function(uri ){
+var download = function(uri,isBack ){
   request.head(uri, function(err, res, body){
     console.log('content-type:', res.headers['content-type']);
     console.log('content-length:', res.headers['content-length']);
@@ -10,6 +10,9 @@ var download = function(uri ){
    
       let item = new ImageItem();
       item.Name='Image2-'+formatDate(new Date());
+      if(isBack){
+        item.Name=item.Name+"b";
+      }
       item.Data =body;
       item.save((err)=>{});
       console.log('done2');
@@ -29,7 +32,8 @@ mongoose.connect(mongoDB, { useNewUrlParser: true,useUnifiedTopology: true  },(e
   console.log(err);
 });
 
-download('http://194.190.129.43/ships/foto/50letpobedy1.jpg');
+download('http://194.190.129.43/ships/foto/50letpobedy1.jpg',false);
+download('http://194.190.129.43/ships/foto/50letpobedy2.jpg',true);
 
 function formatDate(date) {
   let d = new Date(date);
